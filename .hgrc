@@ -1,0 +1,3 @@
+[ui]
+username = Zhihao Jia <zhihao.d.jia@gmail.com>      # Name data to appear in commits
+ssh = ssh -C
