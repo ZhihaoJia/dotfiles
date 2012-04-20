@@ -2,10 +2,6 @@
 	name = Zhihao Jia
 	email = zhihao.d.jia@gmail.com
 
-[github]
-	user = ZhihaoJia
-	token = 7c4c0f6d3c7de4f4fe6216a10bae5535
-
 [color]
 	status = auto
 	branch = auto
