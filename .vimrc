@@ -17,7 +17,8 @@ filetype plugin on                  " use the file type plugins
 set showcmd                         " shows what you're typing as a command
 set number                          " display line numbers
 set ruler                           " show the cursor position
-set wrap                            " soft wrap lines
+set wrap                            " soft wrap lines - [jk] for logical line movement, g[jk] for screen lines movement
+set textwidth=79                    " line width character limit
 set wildmenu                        " menu has tab completion - like bash
 set wildmode=longest:full
 set gcr=a:blinkon0                  " turn off blinking cursor in normal mode
@@ -51,7 +52,7 @@ if has('gui_running')
     set co=203                      " window columns
     set lines=40                    " window lines
     set transparency=10             " window transparency 10%
-    noremap <c-tab> : tabnext<cr>   " ctrl+tab for next tab
+    noremap <c-tab> : tabnext<cr>   " ctrl+tab for next tab - alternatives are g[tT] and cmd+shift+[{}]
 
     set cul                         " highlight current line
 else
