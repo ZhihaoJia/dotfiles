@@ -1,41 +1,42 @@
 " Configuration file for vim
-set modelines=0		" CVE-2007-2438
+set modelines=0                     " CVE-2007-2438
 
 " Normally we use vim-extensions. If you want true vi-compatibility
 " remove change the following statements
-set nocompatible	" Use Vim defaults instead of 100% vi compatibility
-set backspace=2		" more powerful backspacing
+set nocompatible                    " Use Vim defaults instead of 100% vi compatibility
+set backspace=2                     " more powerful backspacing
 
 " --------------------------------------------------------------------
 
 " General
 set fileformats=unix,dos,mac        " support newline formats
 filetype on                         " enable file type detection
-filetype plugin on	            " use the file type plugins
+filetype plugin on                  " use the file type plugins
 
 " Console UI & Text Display
 set showcmd                         " shows what you're typing as a command
-set number		            " display line numbers
-set ruler		            " show the cursor position
+set number                          " display line numbers
+set ruler                           " show the cursor position
 set wrap                            " soft wrap lines
 set wildmenu                        " menu has tab completion - like bash
 set wildmode=longest:full
-set gcr=a:blinkon0	            " turn off blinking cursor in normal mode
+set gcr=a:blinkon0                  " turn off blinking cursor in normal mode
 set foldmethod=marker               " markers are used to specify folds
-syntax on		            " syntax highlighting
+syntax on                           " syntax highlighting
 
 " Text Editing & Search
-set ai			            " auto indenting
-set shiftwidth=4                    " spaces for indentation
-set softtabstop=4                   " spaces for tab
+set ai                              " auto indenting
+set shiftwidth=4                    " spaces per indentation
+set tabstop=4                       " spaces per tab
+set softtabstop=4                   " spaces per tab for editing operations
 set expandtab                       " use spaces instead of tabs
 set smarttab                        " tab in front of line follows 'shiftwidth' (normally follows 'tabstop' or 'softtabstop')
 set showmatch                       " show matching bracket
-set hlsearch		            " highlight the last searched term
+set hlsearch                        " highlight the last searched term
 set incsearch                       " incremental search - search as you type
 set ignorecase                      " case of normal letters are ignored
 set smartcase                       " ignorecase enabled if search pattern contains lower case only
-set history=100		            " keep 100 lines of history
+set history=100                     " keep 100 lines of history
 
 " Other
 set mouse=a                         " enable mouse support for all modes
@@ -54,7 +55,7 @@ if has('gui_running')
 
     set cul                         " highlight current line
 else
-    colorscheme default
+    colorscheme default             " want default colorscheme in terminal vim
 endif
 
 " automatically cd into directory file is in
