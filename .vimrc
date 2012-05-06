@@ -18,7 +18,7 @@ set showcmd                         " shows what you're typing as a command
 set number                          " display line numbers
 set ruler                           " show the cursor position
 set wrap                            " soft wrap lines - [jk] for logical line movement, g[jk] for screen lines movement
-set textwidth=79                    " line width character limit
+" set textwidth=80                    " line width character limit
 set wildmenu                        " menu has tab completion - like bash
 set wildmode=longest:full
 set gcr=a:blinkon0                  " turn off blinking cursor in normal mode
@@ -35,6 +35,8 @@ set smarttab                        " tab in front of line follows 'shiftwidth' 
 set showmatch                       " show matching bracket
 set hlsearch                        " highlight the last searched term
 set incsearch                       " incremental search - search as you type
+" clear highlighting from previous search
+nnoremap <cr><cr> :noh<cr><cr>
 set ignorecase                      " case of normal letters are ignored
 set smartcase                       " ignorecase enabled if search pattern contains lower case only
 set history=100                     " keep 100 lines of history
@@ -52,8 +54,8 @@ if has('gui_running')
     set co=203                      " window columns
     set lines=40                    " window lines
     set transparency=10             " window transparency 10%
-    noremap <c-tab> : tabnext<cr>   " ctrl+tab for next tab - alternatives are g[tT] and cmd+shift+[{}]
-
+    " ctrl+tab for next tab - alternatives are g[tT] and cmd+shift+[{}]
+    noremap <c-tab> : tabnext<cr>
     set cul                         " highlight current line
 else
     colorscheme default             " want default colorscheme in terminal vim
