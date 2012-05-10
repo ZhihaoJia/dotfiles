@@ -1,28 +1,3 @@
-*.com
-*.class
-*.dll
-*.exe
-*.o
-*.so
-
-*.7z
-*.dmg
-*.gz
-*.iso
-*.jar
-*.rar
-*.tar
-*.zip
-
-*.log
-# *.sql
-# *.sqlite
-
 .DS_Store*
-enthumbs.db
-Icon?
-Thumbs.db
 *.swp
-tags
-
-.svn
+Icon?
