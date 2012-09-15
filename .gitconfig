@@ -1,21 +1,21 @@
 [user]
-	name = Zhihao Jia
-	email = zhihao.d.jia@gmail.com
+    name = Zhihao Jia
+    email = zhihao.d.jia@gmail.com
 
 [color]
-	status = auto
-	branch = auto
-        diff = auto
+    status = auto
+    branch = auto
+    diff = auto
 
 [core]
-        editor = /usr/bin/vim
-        excludesfile = ~/.gitignore_global
+    editor = /usr/bin/vim
+    excludesfile = ~/.gitignore_global
 
 [merge]
-        tool = vimdiff
+    tool = vimdiff
 
 [diff]
-        renames = copies        # detect renames as well as copies
+    renames = copies        # detect renames as well as copies
 
 [difftool]
-        prompt = false
+    prompt = false

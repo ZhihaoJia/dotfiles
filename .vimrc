@@ -25,6 +25,8 @@ set gcr=a:blinkon0                  " turn off blinking cursor in normal mode
 set foldmethod=marker               " markers are used to specify folds
 syntax on                           " syntax highlighting
 
+" Text Movement
+
 " Text Editing & Search
 set ai                              " auto indenting
 set shiftwidth=4                    " spaces per indentation
@@ -35,18 +37,18 @@ set smarttab                        " tab in front of line follows 'shiftwidth' 
 set showmatch                       " show matching bracket
 set hlsearch                        " highlight the last searched term
 set incsearch                       " incremental search - search as you type
-" clear highlighting from previous search
-nnoremap <cr><cr> :noh<cr><cr>
 set ignorecase                      " case of normal letters are ignored
 set smartcase                       " ignorecase enabled if search pattern contains lower case only
 set history=100                     " keep 100 lines of history
+" clear highlighting from previous search
+nnoremap <cr><cr> :noh<cr><cr>
 
 " Other
 set mouse=a                         " enable mouse support for all modes
 set noerrorbells                    " disables error bells/sound
 set visualbell                      " set visual bell
 
-" MacVim
+" MacVim / gVim
 if has('gui_running')
     colorscheme solarized           " set colorscheme
     set background=dark             " dark background
@@ -54,6 +56,7 @@ if has('gui_running')
     set co=203                      " window columns
     set lines=40                    " window lines
     set transparency=10             " window transparency 10%
+    set guifont=DejaVu\ Sans\ Mono      " set font
     " ctrl+tab for next tab - alternatives are g[tT] and cmd+shift+[{}]
     noremap <c-tab> : tabnext<cr>
     set cul                         " highlight current line
