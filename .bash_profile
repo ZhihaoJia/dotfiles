@@ -57,6 +57,12 @@ alias f='find . | grep'                       # quick file search
 
 alias svim='sudo vim'                       # vim as another user
 
+alias pd='pushd'
+alias bd='popd'
+
+alias ssh_zhi='ssh zhihaojia@zhihaojia.com'
+alias ssh_uw='ssh -Y z3jia@linux.student.cs.uwaterloo.ca'
+
 
 ### FUNCTIONS ###
 
