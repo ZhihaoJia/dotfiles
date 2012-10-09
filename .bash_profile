@@ -51,14 +51,14 @@ alias dir='ls -1'                           # windows-style list (vertical list)
 alias grep='grep --color=auto'              # grep colourized
 alias egrep='egrep --color=auto'            # egrep colourized
 alias fgrep='fgrep --color=auto'            # fgrep colourized
-alias rgrep='grep -r'                       # grep through files and directories recursively
+alias grepr='grep -r'                       # grep through files and directories recursively
 
-alias f='find . | grep'                       # quick file search
+alias f='find . | grep'                     # quick file search
 
 alias svim='sudo vim'                       # vim as another user
 
-alias pd='pushd'
-alias bd='popd'
+alias fd='pushd'                            # short form (f = forward)
+alias bd='popd'                             # short form (b = back)
 
 alias ssh_zhi='ssh zhihaojia@zhihaojia.com'
 alias ssh_uw='ssh -Y z3jia@linux.student.cs.uwaterloo.ca'
