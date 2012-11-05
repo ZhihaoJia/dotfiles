@@ -1,3 +1,9 @@
+# OS generated files
 .DS_Store*
-*.swp
 Icon?
+
+# Temp files
+*.swp
+
+# Other files
+tags
