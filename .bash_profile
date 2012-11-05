@@ -31,7 +31,9 @@ export EDITOR=/usr/bin/vim                  # set default text editor
 
 # Setting PATH for Python 2.7
 # The orginal version is saved in .bash_profile.pysave
-PATH="${PATH}:/Library/Frameworks/Python.framework/Versions/2.7/bin"
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+# Add /usr/local/bin before /usr/bin for homebrew
+PATH="/usr/local/bin:${PATH}"
 export PATH
 
 
