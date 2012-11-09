@@ -9,21 +9,21 @@ set backspace=2                     " more powerful backspacing
 " --------------------------------------------------------------------
 
 " General
-set fileformats=unix,dos,mac        " support newline formats
 filetype on                         " enable file type detection
 filetype plugin on                  " use the file type plugins
+set fileformats=unix,dos,mac        " support newline formats
 
 " Console UI & Text Display
+syntax on                           " syntax highlighting
 set showcmd                         " shows what you're typing as a command
 set number                          " display line numbers
 set ruler                           " show the cursor position
 set wrap                            " soft wrap lines - [jk] for logical line movement, g[jk] for screen lines movement
-" set textwidth=80                    " line width character limit
+"set textwidth=80                    " line width character limit
 set wildmenu                        " menu has tab completion - like bash
 set wildmode=longest:full
 set gcr=a:blinkon0                  " turn off blinking cursor in normal mode
-set foldmethod=marker               " markers are used to specify folds
-syntax on                           " syntax highlighting
+set foldmethod=manual               " folds are invisible and created manually
 
 " Text Movement
 
@@ -61,10 +61,11 @@ if has('gui_running')
     noremap <c-tab> : tabnext<cr>
     set cul                         " highlight current line
 else
-    colorscheme default             " want default colorscheme in terminal vim
+    set background=dark             " dark background
+    colorscheme default             " colorscheme for terminal vim
 endif
 
-" automatically cd into directory file is in
+" Automatically cd into directory file is in
 autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
 
 " When editing a file, always jump to the last cursor position
@@ -74,6 +75,34 @@ autocmd BufReadPost *
 \ exe "normal g'\"" |
 \ endif |
 \ endif
+
+" Automatically save and restore folds when file closed and reopened
+"au BufWinLeave * mkview
+"au BufWinEnter * silent loadview
+
+" Swap two screens with split window
+function! MarkWindowSwap()
+    let g:markedWinNum = winnr()
+endfunction
+
+function! DoWindowSwap()
+    "Mark destination
+    let curNum = winnr()
+    let curBuf = bufnr( "%" )
+    exe g:markedWinNum . "wincmd w"
+    "Switch to source and shuffle dest->source
+    let markedBuf = bufnr( "%" )
+    "Hide and open so that we aren't prompted and keep history
+    exe 'hide buf' curBuf
+    "Switch to dest and shuffle source->dest
+    exe curNum . "wincmd w"
+    "Hide and open so that we aren't prompted and keep history
+    exe 'hide buf' markedBuf
+endfunction
+
+noremap <silent> <leader>maw :call MarkWindowSwap()<CR>
+noremap <silent> <leader>mvw :call DoWindowSwap()<CR>
+
 
 " --------------------------------------------------------------------
 
