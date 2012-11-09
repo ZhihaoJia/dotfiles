@@ -26,6 +26,7 @@ set gcr=a:blinkon0                  " turn off blinking cursor in normal mode
 set foldmethod=manual               " folds are invisible and created manually
 
 " Text Movement
+set tags=./tags;/                   " look for tags through directory tree from current to root
 
 " Text Editing & Search
 set ai                              " auto indenting
