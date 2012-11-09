@@ -61,8 +61,8 @@ if has('gui_running')
     noremap <c-tab> : tabnext<cr>
     set cul                         " highlight current line
 else
-    set background=dark             " dark background
     colorscheme default             " colorscheme for terminal vim
+    set background=dark             " dark background
 endif
 
 " Automatically cd into directory file is in
