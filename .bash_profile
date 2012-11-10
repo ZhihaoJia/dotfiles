@@ -39,6 +39,8 @@ export PATH
 
 ### ALIASES ###
 
+alias e='exit'                              # shortform for exit
+
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
