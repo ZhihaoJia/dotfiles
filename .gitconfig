@@ -12,12 +12,15 @@
     excludesfile = ~/.gitignore_global
     whitespace = trailing-space,space-before-tab
 
-[merge]
-    tool = vimdiff
-    stat = true
-
 [diff]
     renames = copies        # detect renames as well as copies
 
 [difftool]
     prompt = false
+
+[push]
+    default = simple
+
+[merge]
+    tool = vimdiff
+    stat = true
