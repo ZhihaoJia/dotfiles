@@ -52,6 +52,9 @@ alias la='ls -A'                            # list all files except . and ..
 alias lla='ls -lA'                          # list all files with detail
 alias dir='ls -1'                           # windows-style list (vertical list)
 
+alias fd='pushd'                            # short form (f = forward)
+alias bd='popd'                             # short form (b = back)
+
 alias grep='grep --color=auto'              # grep colourized
 alias egrep='egrep --color=auto'            # egrep colourized
 alias fgrep='fgrep --color=auto'            # fgrep colourized
@@ -61,11 +64,15 @@ alias f='find . | grep'                     # quick file search
 
 alias svim='sudo vim'                       # vim as another user
 
-alias fd='pushd'                            # short form (f = forward)
-alias bd='popd'                             # short form (b = back)
+alias g='git'
+alias glgs='git log --graph --stat'
+alias gd='git diff'
+alias gds='git diff --stat'
+alias gc='git commit'
+alias gca='git commit --all'
 
 alias ssh_zhi='ssh zhihaojia@zhihaojia.com'
-alias ssh_uw='ssh -Y z3jia@linux.student.cs.uwaterloo.ca'
+alias ssh_uw='ssh -Y z3jia@linux024.student.cs.uwaterloo.ca'
 
 
 ### FUNCTIONS ###
@@ -80,3 +87,7 @@ if [ -f "${HOME}/.bash_functions" ]; then
   source "${HOME}/.bash_functions"
 fi
 
+# Source Git completion
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
