@@ -10,9 +10,11 @@
 [core]
     editor = /usr/bin/vim
     excludesfile = ~/.gitignore_global
+    whitespace = trailing-space,space-before-tab
 
 [merge]
     tool = vimdiff
+    stat = true
 
 [diff]
     renames = copies        # detect renames as well as copies
