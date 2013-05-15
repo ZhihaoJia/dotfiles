@@ -65,11 +65,18 @@ alias f='find . | grep'                     # quick file search
 alias svim='sudo vim'                       # vim as another user
 
 alias g='git'
+alias gs='git status'
 alias glgs='git log --graph --stat'
 alias gd='git diff'
 alias gds='git diff --stat'
 alias gc='git commit'
 alias gca='git commit --all'
+alias gpsh='git push'
+alias gpll='git pull'
+alias gm='git merge'
+alias gb='git branch'
+alias gch='git checkout'
+alias gchb='git checkout -b'
 
 alias ssh_zhi='ssh zhihaojia@zhihaojia.com'
 alias ssh_uw='ssh -Y z3jia@linux024.student.cs.uwaterloo.ca'
@@ -91,3 +98,5 @@ fi
 if [ -f `brew --prefix`/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
