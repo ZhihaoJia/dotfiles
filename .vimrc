@@ -30,9 +30,9 @@ set tags=./tags;/                   " look for tags through directory tree from 
 
 " Text Editing & Search
 set ai                              " auto indenting
-set shiftwidth=4                    " spaces per indentation
-set tabstop=4                       " spaces per tab
-set softtabstop=4                   " spaces per tab for editing operations
+set shiftwidth=2                    " spaces per indentation
+set tabstop=2                       " spaces per tab
+set softtabstop=2                   " spaces per tab for editing operations
 set expandtab                       " use spaces instead of tabs
 set smarttab                        " tab in front of line follows 'shiftwidth' (normally follows 'tabstop' or 'softtabstop')
 set showmatch                       " show matching bracket
@@ -51,7 +51,7 @@ set visualbell                      " set visual bell
 
 " MacVim / gVim
 if has('gui_running')
-    colorscheme solarized           " set colorscheme
+    colorscheme blackboard          " set colorscheme
     set background=dark             " dark background
     set guioptions-=T               " hide toolbar
     set co=203                      " window columns
@@ -80,6 +80,17 @@ autocmd BufReadPost *
 " Automatically save and restore folds when file closed and reopened
 "au BufWinLeave * mkview
 "au BufWinEnter * silent loadview
+
+" --------------------------------------------------------------------
+
+" Settings for different file types
+
+autocmd FileType ruby set shiftwidth=2|set tabstop=2|set softtabstop=2
+
+" Add spell check and auto wrap at recommended 72 columns for git commit messages
+autocmd FileType gitcommit setlocal spell textwidth=72
+
+" --------------------------------------------------------------------
 
 " Swap two screens with split window
 function! MarkWindowSwap()
