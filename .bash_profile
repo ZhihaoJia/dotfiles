@@ -1,7 +1,7 @@
 ### TERMINAL OPTIONS ###
 
 export CLICOLOR=1                           # enable terminal colours
-export LSCOLORS=dxfxcxbxcxegedabagacad      # set terminal colours
+#export LSCOLORS=dxfxcxbxcxegedabagacad      # set terminal colours
 
 
 ### BASH OPTIONS ###
@@ -46,6 +46,8 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
+alias t='top'                               # short top
+
 alias ls='ls -GFh'                          # list colourized + filetype character extensions + human-readable
 alias ll='ls -l'                            # list detailed
 alias la='ls -A'                            # list all files except . and ..
@@ -55,20 +57,37 @@ alias dir='ls -1'                           # windows-style list (vertical list)
 alias fd='pushd'                            # short form (f = forward)
 alias bd='popd'                             # short form (b = back)
 
+alias with='open -a'                        # open file with application 'with APP_PATH FILE_PATH'
+alias edit='open -e'                        # open file with TextEdit
+
 alias grep='grep --color=auto'              # grep colourized
 alias egrep='egrep --color=auto'            # egrep colourized
 alias fgrep='fgrep --color=auto'            # fgrep colourized
 alias grepr='grep -r'                       # grep through files and directories recursively
+alias grepi='grep -i'                       # case-insensitive grep
+alias grepri='grep -ri'                     # recursive, case-insensitive grep
+
+alias psgrep='ps aux | grep'                # grep processes
 
 alias f='find . | grep'                     # quick file search
+alias fni='find . -iname'                   # recursive, case-insensitive file search from current directory
 
-alias svim='sudo vim'                       # vim as another user
+alias svim='sudo vim'                       # vim as superuser
 
 alias g='git'
 alias gs='git status'
+alias gsh='git show'
+alias gss='git show --stat'
+alias gl='git log'
+alias glo='git log --oneline'
+alias glog='git log --oneline --graph'
 alias glgs='git log --graph --stat'
+alias glgsn='git log --graph --stat -n'
 alias gd='git diff'
 alias gds='git diff --stat'
+alias gdd='git diff --staged'
+alias gdc='git diff --cached'
+alias ga='git add'
 alias gc='git commit'
 alias gca='git commit --all'
 alias gpsh='git push'
@@ -77,6 +96,14 @@ alias gm='git merge'
 alias gb='git branch'
 alias gch='git checkout'
 alias gchb='git checkout -b'
+alias gr='git reset'
+alias grs='git reset --soft'
+alias grm='git remote'
+alias gst='git stash'
+alias gstl='git stash list'
+alias gstd='git stash drop'
+alias gg='git grep --color=auto'
+alias ggi='git grep --color=auto -i'
 
 alias ssh_zhi='ssh zhihaojia@zhihaojia.com'
 alias ssh_uw='ssh -Y z3jia@linux024.student.cs.uwaterloo.ca'
@@ -98,5 +125,3 @@ fi
 if [ -f `brew --prefix`/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
