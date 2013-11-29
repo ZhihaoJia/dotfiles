@@ -1,0 +1,68 @@
+# SLATE CONFIGURATION
+
+# Configs
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+config windowHintsSpread true
+
+# Aliases
+alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
+alias lefthalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY
+alias righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+alias tophalf move screenOriginX;screenOriginY screenSizeX;screenSizeY/2
+alias bottomhalf move screenOriginX;screenOriginY+screenSizeY/2 screenSizeX;screenSizeY/2
+alias topleft corner top-left resize:screenSizeX/2;screenSizeY/2
+alias topright corner top-right resize:screenSizeX/2;screenSizeY/2
+alias bottomleft corner bottom-left resize:screenSizeX/2;screenSizeY/2
+alias bottomright corner bottom-right resize:screenSizeX/2;screenSizeY/2
+
+# Move Bindings
+bind /:alt;cmd      ${full}
+bind up:alt;cmd     ${tophalf}
+bind right:alt;cmd  ${righthalf}
+bind down:alt;cmd   ${bottomhalf}
+bind left:alt;cmd   ${lefthalf}
+
+bind k:alt;cmd      ${full}
+bind u:alt;cmd      ${topleft}
+bind i:alt;cmd      ${tophalf}
+bind o:alt;cmd      ${topright}
+bind l:alt;cmd      ${righthalf}
+bind .:alt;cmd      ${bottomright}
+bind ,:alt;cmd      ${bottomhalf}
+bind m:alt;cmd      ${bottomleft}
+bind j:alt;cmd      ${lefthalf}
+
+# Nudge Bindings
+bind right:shift;alt nudge +10% +0
+bind left:shift;alt  nudge -10% +0
+bind up:shift;alt    nudge +0   -10%
+bind down:shift;alt  nudge +0   +10%
+
+# Push Bindings
+bind right:ctrl;cmd  push right bar-resize:screenSizeX/2
+bind left:ctrl;cmd   push left  bar-resize:screenSizeX/2
+bind up:ctrl;cmd     push up    bar-resize:screenSizeY/2
+bind down:ctrl;cmd   push down  bar-resize:screenSizeY/2
+
+# Resize Bindings
+bind right:ctrl;alt   resize +10% +0
+bind left:ctrl;alt    resize -10% +0
+bind up:ctrl;alt      resize +0   -10%
+bind down:ctrl;alt    resize +0   +10%
+
+# Throw Bindings
+bind 1:ctrl;alt;cmd     throw 0 resize
+bind 2:ctrl;alt;cmd     throw 1 resize
+bind 3:ctrl;alt;cmd     throw 2 resize
+bind right:ctrl;alt;cmd throw right resize
+bind left:ctrl;alt;cmd  throw left  resize
+bind up:ctrl;alt;cmd    throw up    resize
+bind down:ctrl;alt;cmd  throw down  resize
+
+# Window Hints
+bind esc:cmd hint
