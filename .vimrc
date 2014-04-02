@@ -57,9 +57,10 @@ if has('gui_running')
     set co=203                      " window columns
     set lines=40                    " window lines
     set transparency=10             " window transparency 10%
-    set guifont=DejaVu\ Sans\ Mono      " set font
-    " ctrl+tab for next tab - alternatives are g[tT] and cmd+shift+[{}]
+    set guifont=Monaco:h12          " set font
+    " ctrl+tab for next tab, ctrl+shift+tab for previous tab - alternatives are g[tT] and cmd+shift+[{}]
     noremap <c-tab> : tabnext<cr>
+    noremap <c-s-tab> : tabprevious<cr>
     set cul                         " highlight current line
 else
     colorscheme default             " colorscheme for terminal vim
@@ -89,32 +90,6 @@ autocmd FileType ruby set shiftwidth=2|set tabstop=2|set softtabstop=2
 
 " Add spell check and auto wrap at recommended 72 columns for git commit messages
 autocmd FileType gitcommit setlocal spell textwidth=72
-
-" --------------------------------------------------------------------
-
-" Swap two screens with split window
-function! MarkWindowSwap()
-    let g:markedWinNum = winnr()
-endfunction
-
-function! DoWindowSwap()
-    "Mark destination
-    let curNum = winnr()
-    let curBuf = bufnr( "%" )
-    exe g:markedWinNum . "wincmd w"
-    "Switch to source and shuffle dest->source
-    let markedBuf = bufnr( "%" )
-    "Hide and open so that we aren't prompted and keep history
-    exe 'hide buf' curBuf
-    "Switch to dest and shuffle source->dest
-    exe curNum . "wincmd w"
-    "Hide and open so that we aren't prompted and keep history
-    exe 'hide buf' markedBuf
-endfunction
-
-noremap <silent> <leader>maw :call MarkWindowSwap()<CR>
-noremap <silent> <leader>mvw :call DoWindowSwap()<CR>
-
 
 " --------------------------------------------------------------------
 
